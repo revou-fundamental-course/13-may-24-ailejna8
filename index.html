@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Luas dan Keliling Segitiga</title>
+
+</head>
+<body>
+    <div class="calculator">
+        <h1 class="welcome-heading">Welcome to Davina Calculator!</h1> 
+        <img src="https://2.bp.blogspot.com/-t60LY3PL1uY/XLbwMuFdfsI/AAAAAAAAA30/Zx6oTB-LaDM7pUjczMtKmx2TXLPC5EOKACLcBGAs/s1600/2019-04-17%2Bat%2B16-20-17.png" width="400px"/>
+        <h2>Menghitung Luas Segitiga</h2>  
+        <label for="">Alas Segitiga</label><br>
+        <input type="number" id="alasLuas"><br>
+        <label for="">Tinggi Segitiga</label><br>
+        <input type="number" id="tinggiLuas"><br>
+        <button id="hitungLuas">Hitung</button>
+        <div id="outputLuas"></div>
+
+        <h2>Menghitung Keliling Segitiga</h2>  
+        <label for="">Alas Segitiga</label><br>
+        <input type="number" id="alasKeliling"><br>
+        <label for="">Sisi Miring 1</label><br>
+        <input type="number" id="sisiMiring1"><br>
+        <label for="">Sisi Miring 2</label><br>
+        <input type="number" id="sisiMiring2"><br>
+        <button id="hitungKeliling">Hitung</button>
+        <div id="outputKeliling"></div>
+    </div>
+
+    <script>
+        document.getElementById('hitungLuas').addEventListener('click', function() {
+            let alasLuas = parseFloat(document.getElementById('alasLuas').value);
+            let tinggiLuas = parseFloat(document.getElementById('tinggiLuas').value);
+            let luas = 0.5 * alasLuas * tinggiLuas;
+            document.getElementById('outputLuas').innerHTML = `Luas Segitiga adalah ${luas} cm<sup>2</sup>`;
+        });
+
+        document.getElementById('hitungKeliling').addEventListener('click', function() {
+            let alasKeliling = parseFloat(document.getElementById('alasKeliling').value);
+            let sisiMiring1 = parseFloat(document.getElementById('sisiMiring1').value);
+            let sisiMiring2 = parseFloat(document.getElementById('sisiMiring2').value);
+            let keliling = alasKeliling + sisiMiring1 + sisiMiring2;
+            document.getElementById('outputKeliling').innerHTML = `Keliling Segitiga adalah ${keliling} cm`;
+        });
+    </script>
+</body>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #ffffff;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .calculator {
+        background-color: rgba(163, 241, 222, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    h1 {
+        color: #000000;
+    }
+
+    .welcome-heading {
+        color: #176780; 
+    }
+
+    label {
+        font-weight: bold;
+        color: #4f4f5f;
+    }
+
+    input[type="number"] {
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #000000;
+        border-radius: 4px;
+        width: 200px;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #64879b;
+        color: rgb(255, 255, 255);
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #f5b9b9;
+    }
+
+    #outputLuas, #outputKeliling {
+        margin-top: 10px;
+        padding: 10px;
+        border: 1px solid #000000;
+        border-radius: 4px;
+        background-color: #ffffff;
+    }
+</style>
+</html>
